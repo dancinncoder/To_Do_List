@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To_Do_List</title>
+
+    <script>
+
+    //참고 https://www.w3schools.com/jsref/dom_obj_text.asp 
+    //참고 https://www.w3schools.com/jsref/prop_html_innerhtml.asp 
+
+    function addText() {
+      var x = document.getElementById("myText").value;
+      document.getElementById("content").innerHTML = x; 
+    }
+
+    function resetText() {
+        document.getElementById("content").innerHTML = "";
+    }
+
+    </script>
+</head>
+<body>
+    <input type="text" id="myText" placeholder="Add List">
+
+    <input type="button" value="+" onclick="
+        addText();">
+    
+    <input type="button" value="RESET" onclick="
+        resetText();">
+
+    <p id="content" ></p>
+
+
+
+</body>
+</html>
