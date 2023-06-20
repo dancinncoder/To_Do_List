@@ -10,27 +10,47 @@
     //참고 https://www.w3schools.com/jsref/dom_obj_text.asp 
     //참고 https://www.w3schools.com/jsref/prop_html_innerhtml.asp 
 
-    function addText() {
-      var x = document.getElementById("myText").value;
-      document.getElementById("content").innerHTML = x; 
-    }
+        function addText() {
+            var x = document.getElementById("myText").value;
+            var li = document.createElement("li");
+            li.innerText = x;
+            document.getElementById("content").appendChild(li);
+        }
 
-    function resetText() {
-        document.getElementById("content").innerHTML = "";
-    }
+        function emptyBox() {
+            var x = document.getElementById("myText").value;
+            document.getElementById("myText").value = "";
+        }
+
+        function resetContent() {
+            document.getElementById("content").innerHTML = "";
+        }
+
+
+    //참고 https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild
+    //참고 https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText
+
 
     </script>
 </head>
 <body>
-    <input type="text" id="myText" placeholder="Add List">
+    <input id="myText" type="text" placeholder="Add List" >
 
     <input type="button" value="+" onclick="
-        addText();">
-    
-    <input type="button" value="RESET" onclick="
-        resetText();">
+        addText();
+        emptyBox();
+    ">
 
-    <p id="content" ></p>
+    <input type="button" value="RESET" onclick="
+        resetContent();
+    ">
+
+    <ul id="content"></ul>
+
+
+
+
+
 
 
 
